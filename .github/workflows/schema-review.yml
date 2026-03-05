@@ -1,0 +1,103 @@
+# Option A: Ingest both base and head schemas in CI, then run the Schema Reviewer Agent
+# to post a contextual review comment on the PR.
+#
+# Prerequisites:
+# - Produce schema_base.json and schema_head.json (e.g. by running extract-schema.js
+#   for the base ref and head ref against your Postgres). For a quick test you can
+#   copy backend/scripts/schema.json to both files.
+# - Add secrets: BACKEND_URL, API_TOKEN, GEMINI_API_KEY (GITHUB_TOKEN is provided by Actions)
+name: Schema Review (AI)
+
+on:
+  pull_request:
+    branches: [main, master]
+
+env:
+  BACKEND_URL: ${{ secrets.BACKEND_URL }}
+  API_TOKEN: ${{ secrets.API_TOKEN }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+jobs:
+  schema-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Option A: Produce base and head schema JSONs.
+      # For a real pipeline, run extract-schema.js for base and head refs (with Postgres in CI).
+      # Below: use schema from base ref and head ref when available; else use current schema for both.
+      - name: Prepare base schema
+        run: |
+          git show ${{ github.event.pull_request.base.sha }}:backend/scripts/schema.json > schema_base.json 2>/dev/null || true
+          if [ ! -s schema_base.json ]; then
+            cp backend/scripts/schema.json schema_base.json 2>/dev/null || echo '{"databaseName":"ci_db","databaseType":"postgresql","tables":[]}' > schema_base.json
+          fi
+      - name: Prepare head schema
+        run: |
+          cp backend/scripts/schema.json schema_head.json 2>/dev/null || cp schema_base.json schema_head.json
+
+      - name: Ingest base schema
+        id: ingest-base
+        env:
+          BACKEND_URL: ${{ env.BACKEND_URL }}
+          API_TOKEN: ${{ env.API_TOKEN }}
+        run: |
+          RESP=$(curl -s -w "\n%{http_code}" -X POST "$BACKEND_URL/api/v1/schema/ingest" \
+            -H "Authorization: Bearer $API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d @schema_base.json)
+          HTTP_CODE=$(echo "$RESP" | tail -n1)
+          BODY=$(echo "$RESP" | sed '$d')
+          if [ "$HTTP_CODE" != "201" ]; then
+            echo "Ingest base failed: $HTTP_CODE $BODY"
+            exit 1
+          fi
+          SNAPSHOT_ID_BASE=$(echo "$BODY" | jq -r '.data.snapshotId')
+          echo "snapshot_id=$SNAPSHOT_ID_BASE" >> $GITHUB_OUTPUT
+
+      - name: Ingest head schema
+        id: ingest-head
+        env:
+          BACKEND_URL: ${{ env.BACKEND_URL }}
+          API_TOKEN: ${{ env.API_TOKEN }}
+        run: |
+          RESP=$(curl -s -w "\n%{http_code}" -X POST "$BACKEND_URL/api/v1/schema/ingest" \
+            -H "Authorization: Bearer $API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d @schema_head.json)
+          HTTP_CODE=$(echo "$RESP" | tail -n1)
+          BODY=$(echo "$RESP" | sed '$d')
+          if [ "$HTTP_CODE" != "201" ]; then
+            echo "Ingest head failed: $HTTP_CODE $BODY"
+            exit 1
+          fi
+          SNAPSHOT_ID_HEAD=$(echo "$BODY" | jq -r '.data.snapshotId')
+          echo "snapshot_id=$SNAPSHOT_ID_HEAD" >> $GITHUB_OUTPUT
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install agent dependencies
+        run: |
+          cd backend/agents/schema_reviewer
+          pip install -r requirements.txt
+
+      - name: Run Schema Reviewer Agent
+        env:
+          BACKEND_URL: ${{ env.BACKEND_URL }}
+          API_TOKEN: ${{ env.API_TOKEN }}
+          GEMINI_API_KEY: ${{ env.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          cd backend/agents/schema_reviewer
+          python run_agent.py \
+            --snapshot-id-base ${{ steps.ingest-base.outputs.snapshot_id }} \
+            --snapshot-id-head ${{ steps.ingest-head.outputs.snapshot_id }} \
+            --pr-owner ${{ github.repository_owner }} \
+            --pr-repo ${{ github.event.repository.name }} \
+            --pr-number ${{ github.event.pull_request.number }}

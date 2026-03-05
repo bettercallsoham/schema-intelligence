@@ -63,14 +63,16 @@ async function extractSchema() {
     for (const table of tablesResult.rows) {
       console.log(`  Processing table: ${table.table_schema}.${table.table_name}`);
 
-      // Get columns
+      // Get columns with full type information including size/precision
       const columnsResult = await client.query(`
         SELECT 
           column_name,
           data_type,
+          udt_name,
           character_maximum_length,
           numeric_precision,
           numeric_scale,
+          datetime_precision,
           is_nullable,
           column_default
         FROM information_schema.columns
@@ -151,14 +153,27 @@ async function extractSchema() {
         // Ignore size errors
       }
 
-      // Build column type string
+      // Build column type string with full precision/size information
       const buildColumnType = (col) => {
         let type = col.data_type;
-        if (col.character_maximum_length) {
+        
+        // Handle character types (VARCHAR, CHAR, TEXT variants)
+        if (col.character_maximum_length !== null && col.character_maximum_length !== undefined) {
           type += `(${col.character_maximum_length})`;
-        } else if (col.numeric_precision) {
-          type += `(${col.numeric_precision}${col.numeric_scale ? ',' + col.numeric_scale : ''})`;
         }
+        // Handle numeric types (NUMERIC, DECIMAL, INTEGER variants with precision/scale)
+        else if (col.numeric_precision !== null && col.numeric_precision !== undefined) {
+          if (col.numeric_scale !== null && col.numeric_scale !== undefined && col.numeric_scale > 0) {
+            type += `(${col.numeric_precision},${col.numeric_scale})`;
+          } else {
+            type += `(${col.numeric_precision})`;
+          }
+        }
+        // Handle datetime types with precision (TIMESTAMP(6), TIME(3), etc.)
+        else if (col.datetime_precision !== null && col.datetime_precision !== undefined && col.datetime_precision > 0) {
+          type += `(${col.datetime_precision})`;
+        }
+        
         return type;
       };
 

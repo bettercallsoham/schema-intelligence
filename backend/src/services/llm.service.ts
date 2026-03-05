@@ -1,6 +1,5 @@
 import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
 import { ChatOpenAI } from '@langchain/openai';
-import { HumanMessage, SystemMessage } from '@langchain/core/messages';
 import { env } from '../config/env';
 import { logger } from '../utils/logger';
 
@@ -11,6 +10,15 @@ type CrewAITypes = {
   Crew: any;
   OpenAILLM: any;
 };
+
+interface CrewTaskOutput {
+  result?: string;
+}
+
+interface CrewRunOutput {
+  finalOutput?: string;
+  taskOutputs?: CrewTaskOutput[];
+}
 
 interface IssueContext {
   tableName?: string;
@@ -210,12 +218,6 @@ CRITICAL: Start with a direct answer. Avoid verbose responses like "Good news!" 
       userPrompt += `No specific database schema context is available. Please provide general guidance based on the knowledge base.`;
     }
 
-    // Use LangChain to generate response
-    const messages = [
-      new SystemMessage(systemPrompt),
-      new HumanMessage(userPrompt),
-    ];
-
     logger.info('Calling LLM API', {
       modelName: env.geminiApiKey ? env.geminiModel : (process.env.OPENAI_MODEL || 'gpt-4'),
       hasApiKey: !!(env.geminiApiKey || process.env.OPENAI_API_KEY),
@@ -227,8 +229,10 @@ CRITICAL: Start with a direct answer. Avoid verbose responses like "Good news!" 
       setTimeout(() => reject(new Error('Request timeout: The AI API call took longer than 60 seconds')), 60000);
     });
 
+    const prompt = `${systemPrompt}\n\n${userPrompt}`;
+
     const response = await Promise.race([
-      model.invoke(messages),
+      model.invoke(prompt),
       timeoutPromise,
     ]);
     const responseText = response.content as string;
@@ -422,7 +426,7 @@ Requirements:
     });
 
     // Execute crew
-    const crewOutput = await crew.kickoff();
+    const crewOutput = (await crew.kickoff()) as CrewRunOutput;
 
     // Get the final output from the crew
     let fullOutput = crewOutput.finalOutput || '';
@@ -569,12 +573,9 @@ TASK:
 
 Format your response with EXPLANATION, SQL SUGGESTIONS, and RECOMMENDATIONS sections.`;
 
-    const messages = [
-      new SystemMessage(systemPrompt),
-      new HumanMessage(userPrompt),
-    ];
+    const prompt = `${systemPrompt}\n\n${userPrompt}`;
 
-    const response = await model.invoke(messages);
+    const response = await model.invoke(prompt);
     return parseLLMResponse(response.content as string);
   } catch (error) {
     logger.error('Failed to explain specific issue with LangChain', { 

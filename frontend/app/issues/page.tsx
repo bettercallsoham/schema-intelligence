@@ -10,7 +10,7 @@ import {
   faDownload,
   faCheckDouble,
   faChartLine,
-  faSparkles,
+  faWandMagicSparkles,
 } from '@fortawesome/free-solid-svg-icons';
 import { useApp } from '@/contexts/AppContext';
 import { schemaApi, impactApi } from '@/lib/api';
@@ -242,11 +242,12 @@ export default function IssuesPage() {
                             </div>
                           )}
                           {/* ML Prediction Display */}
-                          {issue.predictedImprovement !== null && issue.predictedImprovement !== undefined && 
-                           (issue.category === 'INDEX' || issue.category === 'FOREIGN_KEYS') && (
+                          {issue.predictedImprovement !== null &&
+                            issue.predictedImprovement !== undefined &&
+                            ['INDEX', 'FOREIGN_KEYS'].includes(String(issue.category).toUpperCase()) && (
                             <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 p-3 rounded-md mb-3">
                               <div className="flex items-center gap-2 mb-1">
-                                <FontAwesomeIcon icon={faSparkles} className="text-primary" />
+                                <FontAwesomeIcon icon={faWandMagicSparkles} className="text-primary" />
                                 <p className="text-body-sm text-text-primary font-semibold">
                                   Expected Performance Improvement
                                 </p>

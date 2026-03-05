@@ -11,4 +11,5 @@ docker-compose*.yml
 *.ps1
 *.sh
 REMAINING_WORK.md
+modify-schema.js
 ROADMAP_VS_IMPLEMENTATION.md

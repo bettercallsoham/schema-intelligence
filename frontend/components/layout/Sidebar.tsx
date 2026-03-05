@@ -17,6 +17,7 @@ import {
   faCodeCompare,
   faChartLine,
   faSliders,
+  faShieldHalved,
 } from '@fortawesome/free-solid-svg-icons';
 import type { Database, NavItem } from '@/types';
 
@@ -31,6 +32,7 @@ const navItems: NavItem[] = [
   { id: 'databases', label: 'Databases', icon: 'database', href: '/databases' },
   { id: 'schemas', label: 'Schemas', icon: 'table-list', href: '/schemas' },
   { id: 'issues', label: 'Issues', icon: 'triangle-exclamation', href: '/issues' },
+  { id: 'schema-advisor', label: 'Schema Advisor', icon: 'shield-halved', href: '/schema-advisor' },
   { id: 'ai-assistant', label: 'AI Assistant', icon: 'robot', href: '/ai-assistant' },
   { id: 'sql-generator', label: 'SQL Generator', icon: 'wand-magic-sparkles', href: '/sql-generator' },
   { id: 'compare', label: 'Compare', icon: 'code-compare', href: '/compare' },
@@ -50,6 +52,7 @@ const iconMap: Record<string, IconDefinition> = {
   'code-compare': faCodeCompare,
   'chart-line': faChartLine,
   'sliders': faSliders,
+  'shield-halved': faShieldHalved,
 };
 
 export const Sidebar: React.FC<SidebarProps> = ({

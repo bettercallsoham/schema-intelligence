@@ -153,11 +153,13 @@ export const schemaApi = {
     const params: any = { page, pageSize };
     if (dbName) params.dbName = dbName;
     const response = await api.get<ApiResponse<{ data: any[]; pagination: any }>>('/v1/schema', { params });
-    // Backend returns { status: 'success', data: [...], pagination: {...} }
-    // So response.data.data is the array, and response.data.pagination is the pagination
+    const pag = (response.data as any).pagination || {};
     return {
-      data: response.data.data || [],
-      pagination: response.data.pagination || { total: 0, page: 1, pageSize: 20, totalPages: 0 },
+      data: (response.data as any).data || [],
+      total: pag.total ?? 0,
+      page: pag.page ?? 1,
+      pageSize: pag.pageSize ?? 20,
+      totalPages: pag.totalPages ?? 0,
     };
   },
   compare: async (snapshotId1: string, snapshotId2: string): Promise<any> => {
@@ -257,6 +259,18 @@ export const conversationApi = {
   },
   deleteMultiple: async (conversationIds: string[]): Promise<void> => {
     await api.delete<ApiResponse<void>>('/v1/conversations', { data: { conversationIds } });
+  },
+};
+
+// Schema Advisor APIs
+export const schemaAdvisorApi = {
+  getBySnapshot: async (snapshotId: string): Promise<any> => {
+    const response = await api.get<ApiResponse<any>>(`/v1/schema-advisor/snapshot/${snapshotId}`);
+    return response.data.data;
+  },
+  getByDatabase: async (dbName: string): Promise<any> => {
+    const response = await api.get<ApiResponse<any>>(`/v1/schema-advisor/db/${dbName}`);
+    return response.data.data;
   },
 };
 

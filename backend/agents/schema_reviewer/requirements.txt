@@ -1,0 +1,8 @@
+# CrewAI with Google Gemini support
+crewai[google-genai]>=0.80.0
+
+# HTTP client for backend and GitHub API
+requests>=2.31.0
+
+# Load .env
+python-dotenv>=1.0.0

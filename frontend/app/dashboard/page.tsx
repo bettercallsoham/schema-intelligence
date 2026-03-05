@@ -162,7 +162,7 @@ export default function DashboardPage() {
                   onClick={() => router.push('/issues')}
                   className="border border-border text-text-secondary h-10 px-4 rounded-md text-sm hover:bg-surface-light transition-colors"
                 >
-                  <FontAwesomeIcon icon={faTriangleExclamation} className="mr-2" />
+                  <FontAwesomeIcon icon={faTriangleExclamation} className="mr-2" />  
                   View Issues
                 </button>
                 <button

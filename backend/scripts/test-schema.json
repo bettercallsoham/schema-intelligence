@@ -1,0 +1,6896 @@
+{
+  "databaseName": "volunteer_db",
+  "databaseType": "postgresql",
+  "tables": [
+    {
+      "name": "admins",
+      "schemaName": "public",
+      "rowCount": 5,
+      "sizeBytes": 2031616,
+      "sizeFormatted": "1.94 MB",
+      "columns": [
+        { 
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "email",
+          "type": "character varying(500)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "password",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "lastLoginAt",
+          "type": "timestamp with time zone",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "admins_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key121",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key119",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key117",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key114",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key112",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key110",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key108",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key106",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key104",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key102",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key100",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key98",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key96",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key94",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key27",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key29",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key30",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key32",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key92",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key90",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key88",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key86",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key84",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key82",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key80",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key78",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key76",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key74",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key72",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key15",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key13",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key11",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key9",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key7",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key4",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key1",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key60",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key61",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key63",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key65",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key67",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key69",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key71",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key73",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key83",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key70",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key68",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key66",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key64",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key62",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key59",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key2",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key3",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key5",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key6",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key8",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key10",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key12",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key75",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key77",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key79",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key81",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key14",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key16",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key18",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key20",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key22",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key24",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key25",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key34",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key36",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key38",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key40",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key42",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key45",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key46",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key48",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key50",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key52",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key54",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key56",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key58",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key57",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key55",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key53",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key51",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key49",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key47",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key44",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key43",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key41",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key39",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key37",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key35",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key33",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key31",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key28",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key26",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key23",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key21",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key19",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key17",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key85",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key87",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key89",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key91",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key93",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key95",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key97",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key99",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key101",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key103",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key105",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key107",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key109",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key111",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key113",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key115",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key116",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key118",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "admins_email_key120",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "idx_admins_lastLoginAt",
+          "columns": [
+            "lastLoginAt"
+          ],
+          "unique": false,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "daily_logs",
+      "schemaName": "public",
+      "rowCount": 2,
+      "sizeBytes": 49152,
+      "sizeFormatted": "48 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": "gen_random_uuid()",
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "internId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "date",
+          "type": "date",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "hoursWorked",
+          "type": "numeric(5,2)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "workDescription",
+          "type": "text",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "tasksCompleted",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "challenges",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "learnings",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "mood",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "status",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'in-progress'::enum_daily_logs_status",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "attachments",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "verifiedBy",
+          "type": "uuid",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "daily_logs_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "daily_logs_intern_id_date",
+          "columns": [
+            "internId",
+            "date"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": [
+        {
+          "name": "daily_logs_internId_fkey",
+          "columnName": "internId",
+          "referencedTable": "interns",
+          "referencedColumn": "id"
+        },
+        {
+          "name": "daily_logs_verifiedBy_fkey",
+          "columnName": "verifiedBy",
+          "referencedTable": "admins",
+          "referencedColumn": "id"
+        }
+      ]
+    },
+    {
+      "name": "event_user_map",
+      "schemaName": "public",
+      "rowCount": 4,
+      "sizeBytes": 24576,
+      "sizeFormatted": "24 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "userId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "eventId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "isAttended",
+          "type": "boolean",
+          "nullable": true,
+          "defaultValue": "false",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "event_user_map_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": [
+        {
+          "name": "event_user_map_userId_fkey",
+          "columnName": "userId",
+          "referencedTable": "users",
+          "referencedColumn": "id"
+        },
+        {
+          "name": "event_user_map_eventId_fkey",
+          "columnName": "eventId",
+          "referencedTable": "events",
+          "referencedColumn": "id"
+        }
+      ]
+    },
+    {
+      "name": "events",
+      "schemaName": "public",
+      "rowCount": 5,
+      "sizeBytes": 32768,
+      "sizeFormatted": "32 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "title",
+          "type": "character varying(200)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "description",
+          "type": "character varying(2000)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "startDate",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "endDate",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "startTime",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "endTime",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "location",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "category",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "volunteersNeeded",
+          "type": "integer(32)",
+          "nullable": false,
+          "defaultValue": "0",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "isHelp",
+          "type": "boolean",
+          "nullable": true,
+          "defaultValue": "false",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "extraVolunteersForHelp",
+          "type": "boolean",
+          "nullable": true,
+          "defaultValue": "false",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "userIdForHelp",
+          "type": "uuid",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "helpFeedback",
+          "type": "json",
+          "nullable": true,
+          "defaultValue": "'[]'::json",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "status",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'Upcoming'::enum_events_status",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "helpStatus",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'pending'::\"enum_events_helpStatus\"",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "events_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": [
+        {
+          "name": "events_userIdForHelp_fkey",
+          "columnName": "userIdForHelp",
+          "referencedTable": "users",
+          "referencedColumn": "id"
+        }
+      ]
+    },
+    {
+      "name": "feedback",
+      "schemaName": "public",
+      "rowCount": 1,
+      "sizeBytes": 32768,
+      "sizeFormatted": "32 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "internId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "feedbackBy",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "taskId",
+          "type": "uuid",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "type",
+          "type": "USER-DEFINED",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "rating",
+          "type": "smallint",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "comments",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "strengths",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "areasForImprovement",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "recommendations",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "isPrivate",
+          "type": "boolean",
+          "nullable": true,
+          "defaultValue": "false",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "followUpDate",
+          "type": "date",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "feedback_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": [
+        {
+          "name": "feedback_internId_fkey",
+          "columnName": "internId",
+          "referencedTable": "interns",
+          "referencedColumn": "id"
+        },
+        {
+          "name": "feedback_feedbackBy_fkey",
+          "columnName": "feedbackBy",
+          "referencedTable": "admins",
+          "referencedColumn": "id"
+        },
+        {
+          "name": "feedback_taskId_fkey",
+          "columnName": "taskId",
+          "referencedTable": "tasks",
+          "referencedColumn": "id"
+        }
+      ]
+    },
+    {
+      "name": "file_uploads",
+      "schemaName": "public",
+      "rowCount": 1,
+      "sizeBytes": 32768,
+      "sizeFormatted": "32 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "internId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "taskId",
+          "type": "uuid",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "fileName",
+          "type": "character varying(512)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "originalName",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "filePath",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "fileSize",
+          "type": "bigint",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "mimeType",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "category",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'document'::enum_file_uploads_category",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "status",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'pending'::enum_file_uploads_status",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "reviewedBy",
+          "type": "uuid",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "reviewComments",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "reviewedAt",
+          "type": "timestamp with time zone",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "file_uploads_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": [
+        {
+          "name": "file_uploads_internId_fkey",
+          "columnName": "internId",
+          "referencedTable": "interns",
+          "referencedColumn": "id"
+        },
+        {
+          "name": "file_uploads_taskId_fkey",
+          "columnName": "taskId",
+          "referencedTable": "tasks",
+          "referencedColumn": "id"
+        },
+        {
+          "name": "file_uploads_reviewedBy_fkey1",
+          "columnName": "reviewedBy",
+          "referencedTable": "admins",
+          "referencedColumn": "id"
+        },
+        {
+          "name": "file_uploads_reviewedBy_fkey",
+          "columnName": "reviewedBy",
+          "referencedTable": "users",
+          "referencedColumn": "id"
+        }
+      ]
+    },
+    {
+      "name": "intern_feedback",
+      "schemaName": "public",
+      "sizeBytes": 16384,
+      "sizeFormatted": "16 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "internId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "adminId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "rating",
+          "type": "integer(32)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "feedback",
+          "type": "text",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "isPrivate",
+          "type": "boolean",
+          "nullable": true,
+          "defaultValue": "false",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "taskId",
+          "type": "uuid",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "intern_feedback_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "intern_reports",
+      "schemaName": "public",
+      "sizeBytes": 16384,
+      "sizeFormatted": "16 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "internId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "generatedBy",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "reportData",
+          "type": "jsonb",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "pdfUrl",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "intern_reports_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "interns",
+      "schemaName": "public",
+      "rowCount": 6,
+      "sizeBytes": 3899392,
+      "sizeFormatted": "3.72 MB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "virtualId",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "name",
+          "type": "character varying(500)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "email",
+          "type": "character varying(320)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "password",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "phone",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "university",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "degree",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "graduationYear",
+          "type": "smallint",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "skills",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "startDate",
+          "type": "timestamp with time zone",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "endDate",
+          "type": "timestamp with time zone",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "profilePicture",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "isVerified",
+          "type": "boolean",
+          "nullable": true,
+          "defaultValue": "false",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "isActive",
+          "type": "boolean",
+          "nullable": true,
+          "defaultValue": "true",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "status",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'active'::enum_interns_status",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "interns_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key117",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key115",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key113",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key110",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key108",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key106",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key104",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key102",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key100",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key98",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key96",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key94",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key92",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key90",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key88",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key86",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key84",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key82",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key80",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key78",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key76",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key11",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key9",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key7",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key4",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key1",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key2",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key3",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key5",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key6",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key8",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key10",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key12",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key14",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key16",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key18",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key20",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key23",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key25",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key26",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key28",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key30",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key32",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key34",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key36",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key38",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key41",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key42",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key40",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key39",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key37",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key35",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key33",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key31",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key29",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key44",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key73",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key72",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key46",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key48",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key50",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key52",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key54",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key56",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key57",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key59",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key61",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key63",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key65",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key67",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key69",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key71",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key70",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key68",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key66",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key64",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key74",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key45",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key43",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key27",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key24",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key22",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key21",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key19",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key17",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key15",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key13",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key62",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key60",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key58",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key55",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key53",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key51",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key49",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key47",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key75",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key77",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key79",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key81",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key83",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key85",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key87",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key89",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key91",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key93",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key95",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key97",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key99",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key101",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key103",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key105",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key107",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key109",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key111",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key112",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key114",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_virtualId_key116",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key117",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key115",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key113",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key110",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key108",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key106",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key104",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key102",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key100",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key98",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key96",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key94",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key92",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key90",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key88",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key86",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key84",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key82",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key80",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key78",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key76",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key74",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key72",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key70",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key28",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key30",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key32",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key34",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key36",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key38",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key41",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key42",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key44",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key65",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key64",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key46",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key48",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key50",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key52",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key54",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key56",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key57",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key59",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key61",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key63",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key62",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key60",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key58",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key55",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key53",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key51",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key49",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key47",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key45",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key43",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key40",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key39",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key37",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key35",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key33",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key31",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key29",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key27",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key24",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key21",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key19",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key17",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key68",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key66",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key4",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key1",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key2",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key3",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key5",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key6",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key8",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key10",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key12",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key14",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key16",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key18",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key20",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key22",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key23",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key25",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key26",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key15",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key13",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key11",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key9",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key7",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key67",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key69",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key71",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key73",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key75",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key77",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key79",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key81",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key83",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key85",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key87",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key89",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key91",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key93",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key95",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key97",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key99",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key101",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key103",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key105",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key107",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key109",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key111",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key112",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key114",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "interns_email_key116",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "mentors",
+      "schemaName": "public",
+      "rowCount": 3,
+      "sizeBytes": 655360,
+      "sizeFormatted": "640 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "name",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "email",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "password",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdBy",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "mentors_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key37",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key35",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key33",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key31",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key29",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key27",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key24",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key21",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key19",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key17",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key15",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key13",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key11",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key9",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key7",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key4",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key1",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key2",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key3",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key22",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key5",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key6",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key8",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key10",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key12",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key14",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key16",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key18",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key20",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key23",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key25",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key26",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key28",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key30",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key32",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key34",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "mentors_email_key36",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "requirements",
+      "schemaName": "public",
+      "sizeBytes": 16384,
+      "sizeFormatted": "16 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer(32)",
+          "nullable": false,
+          "defaultValue": "nextval('requirements_id_seq'::regclass)",
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "itemName",
+          "type": "character varying(500)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "quantity",
+          "type": "integer",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "productLink",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "remainingQuantity",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdBy",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "requirements_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "task_submissions",
+      "schemaName": "public",
+      "sizeBytes": 16384,
+      "sizeFormatted": "16 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "taskId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "internId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "fileName",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "originalName",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "filePath",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "fileSize",
+          "type": "integer(32)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "mimeType",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "version",
+          "type": "integer(32)",
+          "nullable": false,
+          "defaultValue": "1",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "task_submissions_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "tasks",
+      "schemaName": "public",
+      "rowCount": 2,
+      "sizeBytes": 32768,
+      "sizeFormatted": "32 KB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "title",
+          "type": "character varying(1000)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "status",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'todo'::enum_tasks_status",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "priority",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'medium'::enum_tasks_priority",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "assignedTo",
+          "type": "uuid",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "createdBy",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "dueDate",
+          "type": "timestamp with time zone",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "estimatedHours",
+          "type": "double precision(53)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "actualHours",
+          "type": "double precision(53)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "tags",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "attachments",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "order",
+          "type": "bigint",
+          "nullable": true,
+          "defaultValue": "0",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "estimatedCost",
+          "type": "numeric(10,2)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "tasks_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "idx_tasks_assignedTo",
+          "columns": [
+            "assignedTo"
+          ],
+          "unique": false,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": [
+        {
+          "name": "tasks_assignedTo_fkey",
+          "columnName": "assignedTo",
+          "referencedTable": "interns",
+          "referencedColumn": "id"
+        },
+        {
+          "name": "tasks_createdBy_fkey",
+          "columnName": "createdBy",
+          "referencedTable": "admins",
+          "referencedColumn": "id"
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "schemaName": "public",
+      "rowCount": 4,
+      "sizeBytes": 4030464,
+      "sizeFormatted": "3.84 MB",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "virtualId",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "name",
+          "type": "character varying(500)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "email",
+          "type": "character varying(320)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "password",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "address",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "mobileNo",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "isActive",
+          "type": "boolean",
+          "nullable": false,
+          "defaultValue": "true",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "feedback",
+          "type": "text",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "profilePicture",
+          "type": "character varying(255)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "type",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'Volunteer'::enum_users_type",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "status",
+          "type": "USER-DEFINED",
+          "nullable": true,
+          "defaultValue": "'pending'::enum_users_status",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "phoneNumber",
+          "type": "character varying(20)",
+          "nullable": true,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "users_virtualId_key121",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key120",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key119",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key118",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key117",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key115",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key114",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key113",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key112",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key111",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key110",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key109",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key108",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key107",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key106",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key105",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key104",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key103",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key102",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key101",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key100",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key99",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key98",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key97",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key96",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key95",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key94",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key93",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key92",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key91",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key90",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key89",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key88",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key87",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key86",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key85",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key84",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key83",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key82",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key81",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key80",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key79",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key78",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key77",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key76",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key75",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key74",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key73",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key72",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key71",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key70",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key69",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key68",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key67",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key66",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key65",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key64",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key63",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key62",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key60",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key59",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key57",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key56",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key55",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key54",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key53",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key52",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key51",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key50",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key49",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key47",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key45",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key44",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key42",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key41",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key40",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key39",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key38",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key43",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key37",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key36",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key35",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key33",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key31",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key29",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key28",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key26",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key23",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key21",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key19",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key17",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key15",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key13",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key11",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key9",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key7",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key4",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key1",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key2",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key3",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key5",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key6",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key8",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key10",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key12",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key14",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key16",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key18",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key20",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key22",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key24",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key25",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key27",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key30",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key32",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key34",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key46",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key48",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key58",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key61",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_virtualId_key116",
+          "columns": [
+            "virtualId"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key121",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key119",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key117",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key114",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key112",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key110",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key108",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key106",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key104",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key102",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key100",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key98",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key96",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key94",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key92",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key90",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key88",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key86",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key84",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key82",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key80",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key78",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key76",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key74",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key72",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key70",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key68",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key66",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key64",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key62",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key59",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key57",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key55",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key53",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key51",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key49",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key47",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key44",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key43",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key41",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key39",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key37",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key35",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key33",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key31",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key28",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key26",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key23",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key21",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key19",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key17",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key15",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key13",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key11",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key9",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key7",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key4",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key1",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key2",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key3",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key5",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key6",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key8",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key10",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key12",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key14",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key16",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key18",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key20",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key22",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key24",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key25",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key27",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key29",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key30",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key32",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key34",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key36",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key38",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key40",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key42",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key45",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key46",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key48",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key50",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key52",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key54",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key56",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key58",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key60",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key61",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key63",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key65",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key67",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key69",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key71",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key73",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key75",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key77",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key79",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key81",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key83",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key85",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key87",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key89",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key91",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key93",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key95",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key97",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key99",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key101",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key103",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key105",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key107",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key109",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key111",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key113",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key115",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key116",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key118",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "users_email_key120",
+          "columns": [
+            "email"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "idx_users_phoneNumber",
+          "columns": [
+            "phoneNumber"
+          ],
+          "unique": false,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "notifications",
+      "schemaName": "public",
+      "rowCount": 0,
+      "sizeBytes": 0,
+      "sizeFormatted": "0 Bytes",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": true,
+          "isForeignKey": false
+        },
+        {
+          "name": "userId",
+          "type": "uuid",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": true
+        },
+        {
+          "name": "title",
+          "type": "character varying(255)",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "message",
+          "type": "text",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "isRead",
+          "type": "boolean",
+          "nullable": false,
+          "defaultValue": "false",
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "defaultValue": null,
+          "isPrimaryKey": false,
+          "isForeignKey": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "notifications_pkey",
+          "columns": [
+            "id"
+          ],
+          "unique": true,
+          "type": "btree"
+        },
+        {
+          "name": "idx_notifications_userId",
+          "columns": [
+            "userId"
+          ],
+          "unique": false,
+          "type": "btree"
+        }
+      ],
+      "foreignKeys": [
+        {
+          "name": "notifications_userId_fkey",
+          "columnName": "userId",
+          "referencedTable": "users",
+          "referencedColumn": "id"
+        }
+      ]
+    }
+  ]
+}

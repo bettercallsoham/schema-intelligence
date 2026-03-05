@@ -116,7 +116,7 @@ export const getSchemaController = async (req: AnalyticsRequest, res: Response) 
 
       await pool.end();
 
-      res.json({
+      return res.json({
         status: 'success',
         data: {
           tables,
@@ -128,7 +128,7 @@ export const getSchemaController = async (req: AnalyticsRequest, res: Response) 
     }
   } catch (error: any) {
     console.error('Error fetching schema:', error);
-    res.status(500).json({
+    return res.status(500).json({
       status: 'error',
       message: error.message || 'Failed to fetch database schema',
     });
@@ -201,7 +201,7 @@ export const getMetricsController = async (req: AnalyticsRequest, res: Response)
 
       await pool.end();
 
-      res.json({
+      return res.json({
         status: 'success',
         data: metrics,
       });
@@ -211,7 +211,7 @@ export const getMetricsController = async (req: AnalyticsRequest, res: Response)
     }
   } catch (error: any) {
     console.error('Error fetching metrics:', error);
-    res.status(500).json({
+    return res.status(500).json({
       status: 'error',
       message: error.message || 'Failed to fetch metrics',
     });
@@ -262,10 +262,9 @@ export const getTimeSeriesController = async (req: AnalyticsRequest, res: Respon
       const safeDateColumn = escapeIdentifier(dateColumn);
 
       let query = '';
-      let dateFormat = 'YYYY-MM-DD';
 
       // Detect date type and format accordingly
-      const dateTypeResult = await pool.query(
+      await pool.query(
         `
         SELECT data_type 
         FROM information_schema.columns 
@@ -275,11 +274,6 @@ export const getTimeSeriesController = async (req: AnalyticsRequest, res: Respon
       `,
         [schema, table, dateColumn]
       );
-
-      if (dateTypeResult.rows[0]?.data_type === 'timestamp without time zone' || 
-          dateTypeResult.rows[0]?.data_type === 'timestamp with time zone') {
-        dateFormat = 'YYYY-MM-DD';
-      }
 
       if (metricColumn) {
         const safeMetricColumn = escapeIdentifier(metricColumn);
@@ -319,7 +313,7 @@ export const getTimeSeriesController = async (req: AnalyticsRequest, res: Respon
 
       await pool.end();
 
-      res.json({
+      return res.json({
         status: 'success',
         data: result.rows.map((row) => ({
           date: row.date,
@@ -334,7 +328,7 @@ export const getTimeSeriesController = async (req: AnalyticsRequest, res: Respon
     }
   } catch (error: any) {
     console.error('Error fetching time series:', error);
-    res.status(500).json({
+    return res.status(500).json({
       status: 'error',
       message: error.message || 'Failed to fetch time series data',
     });
@@ -388,7 +382,7 @@ export const getDistributionController = async (req: AnalyticsRequest, res: Resp
 
       await pool.end();
 
-      res.json({
+      return res.json({
         status: 'success',
         data: result.rows.map((row) => ({
           category: row.category,
@@ -401,7 +395,7 @@ export const getDistributionController = async (req: AnalyticsRequest, res: Resp
     }
   } catch (error: any) {
     console.error('Error fetching distribution:', error);
-    res.status(500).json({
+    return res.status(500).json({
       status: 'error',
       message: error.message || 'Failed to fetch distribution data',
     });
@@ -482,7 +476,7 @@ export const getTopNController = async (req: AnalyticsRequest, res: Response) =>
 
       await pool.end();
 
-      res.json({
+      return res.json({
         status: 'success',
         data: result.rows.map((row) => ({
           entity: row.entity,
@@ -497,7 +491,7 @@ export const getTopNController = async (req: AnalyticsRequest, res: Response) =>
     }
   } catch (error: any) {
     console.error('Error fetching top N:', error);
-    res.status(500).json({
+    return res.status(500).json({
       status: 'error',
       message: error.message || 'Failed to fetch top N data',
     });

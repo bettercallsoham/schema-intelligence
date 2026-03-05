@@ -156,7 +156,7 @@ export default function LoginPage() {
 
       {/* Footer */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-        <p className="text-body-sm text-text-muted">© 2024 Schema Intel. All rights reserved.</p>
+        <p className="text-body-sm text-text-muted">© 2026 Schema Intel. All rights reserved.</p>
       </div>
     </div>
   );

@@ -93,7 +93,7 @@ export default function AIAssistantPage() {
     if (message.length > MAX_MESSAGE_LENGTH) {
       const errorMessage: Message = {
         id: `msg-error-${Date.now()}`,
-        conversationId,
+        conversationId: conversationId ?? '',
         role: 'assistant',
         content: `Message is too long. Maximum length is ${MAX_MESSAGE_LENGTH} characters. Please shorten your message.`,
         createdAt: new Date().toISOString(),
@@ -104,7 +104,7 @@ export default function AIAssistantPage() {
 
     const userMessage: Message = {
       id: `msg-${Date.now()}`,
-      conversationId,
+      conversationId: conversationId ?? '',
       role: 'user',
       content: message.trim(),
       createdAt: new Date().toISOString(),
@@ -158,7 +158,7 @@ export default function AIAssistantPage() {
       
       const errorMessage: Message = {
         id: `msg-error-${Date.now()}`,
-        conversationId,
+        conversationId: conversationId ?? '',
         role: 'assistant',
         content: errorContent,
         createdAt: new Date().toISOString(),

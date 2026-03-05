@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { Card } from '@/components/ui/Card';
@@ -21,7 +21,7 @@ import { useApp } from '@/contexts/AppContext';
 import { schemaApi } from '@/lib/api';
 import { useQuery } from '@tanstack/react-query';
 
-export default function SchemasPage() {
+function SchemasPageInner() {
   const searchParams = useSearchParams();
   const snapshotIdParam = searchParams.get('snapshot');
   const { databases, selectedDatabaseId, setSelectedDatabaseId } = useApp();
@@ -337,5 +337,13 @@ export default function SchemasPage() {
         )}
       </div>
     </AppLayout>
+  );
+}
+
+export default function SchemasPage() {
+  return (
+    <Suspense>
+      <SchemasPageInner />
+    </Suspense>
   );
 }

@@ -42,6 +42,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const register = async (email: string, name: string, password: string, role?: string) => {
     await authApi.register(email, name, password, role);
+    // Auto-login after successful registration so the user lands on dashboard directly
+    const result = await authApi.login(email, password);
+    setUser(result.user);
+    setToken(result.token);
   };
 
   const logout = () => {

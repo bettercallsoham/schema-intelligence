@@ -132,13 +132,26 @@ export const deleteAllSnapshotsController = async (req: AuthRequest, res: Respon
   });
 };
 
+/** Recursively convert BigInt to number for JSON serialization (Express res.json cannot serialize BigInt). */
+function serializeForJson(obj: unknown): unknown {
+  if (obj === null || obj === undefined) return obj;
+  if (typeof obj === 'bigint') return Number(obj);
+  if (Array.isArray(obj)) return obj.map(serializeForJson);
+  if (typeof obj === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(obj)) out[k] = serializeForJson(v);
+    return out;
+  }
+  return obj;
+}
+
 export const compareSchemasController = async (req: AuthRequest, res: Response): Promise<void> => {
   const validated = compareSchemasSchema.parse(req.body);
   const comparison = await compareSnapshots(validated.snapshotId1, validated.snapshotId2);
 
   res.json({
     status: 'success',
-    data: comparison,
+    data: serializeForJson(comparison),
   });
 };
 

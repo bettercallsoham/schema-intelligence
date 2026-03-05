@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faSearch,
   faPlus,
   faBell,
   faChevronDown,
@@ -15,13 +14,11 @@ import { useAuth } from '@/contexts/AuthContext';
 interface HeaderProps {
   breadcrumbs?: Array<{ label: string; href?: string }>;
   onNewScan?: () => void;
-  onSearch?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   breadcrumbs = [],
   onNewScan,
-  onSearch,
 }) => {
   const { user, logout } = useAuth();
   return (
@@ -50,15 +47,6 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       <div className="flex items-center gap-md">
-        <button
-          onClick={onSearch}
-          className="flex items-center gap-2 text-text-muted border border-border px-3 h-9 rounded-md text-sm hover:bg-surface-light transition-colors"
-        >
-          <FontAwesomeIcon icon={faSearch} />
-          <span>Search...</span>
-          <span className="text-xs">⌘K</span>
-        </button>
-
         <button
           onClick={onNewScan}
           className="bg-primary text-white h-9 px-4 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors"
