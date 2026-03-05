@@ -1,6 +1,5 @@
 import prisma from '../config/database';
 import { logger } from '../utils/logger';
-import { generateAIExplanation } from './llm.service';
 
 export interface CreateConversationInput {
   userId: string;
@@ -40,11 +39,6 @@ export interface ConversationWithMessages {
  */
 async function generateConversationTitle(firstMessage: string): Promise<string> {
   try {
-    // Use LLM to generate a concise title (max 60 chars)
-    const model = await import('./llm.service').then(m => m.generateAIExplanation);
-    
-    // For now, create a simple title from the first message
-    // In production, you could use LLM to generate better titles
     const title = firstMessage.length > 60 
       ? firstMessage.substring(0, 57) + '...' 
       : firstMessage;

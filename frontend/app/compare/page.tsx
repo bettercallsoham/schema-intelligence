@@ -5,7 +5,16 @@ import { AppLayout } from '@/components/layout/AppLayout';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCodeCompare, faArrowRight, faCheck, faTimes, faTrash, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCodeCompare,
+  faCheck,
+  faTimes,
+  faTrash,
+  faTrashCan,
+  faPenToSquare,
+  faRotateLeft,
+  faCopy,
+} from '@fortawesome/free-solid-svg-icons';
 import { useApp } from '@/contexts/AppContext';
 import { schemaApi } from '@/lib/api';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
@@ -18,6 +27,7 @@ export default function ComparePage() {
   const [showManageSnapshots, setShowManageSnapshots] = useState(false);
   const [deletingSnapshotId, setDeletingSnapshotId] = useState<string | null>(null);
   const [deletingAll, setDeletingAll] = useState(false);
+  const [copiedSql, setCopiedSql] = useState<string | null>(null);
 
   const { data: snapshotsResponse, isLoading: snapshotsLoading } = useQuery({
     queryKey: ['snapshots', selectedDatabaseId],
@@ -25,21 +35,15 @@ export default function ComparePage() {
     enabled: !!selectedDatabaseId,
   });
 
-  // Handle response - API client now returns proper PaginatedResponse { data: [...], pagination: {...} }
-  // But also handle case where it might be an array directly (backward compatibility)
   const snapshots = Array.isArray(snapshotsResponse)
     ? snapshotsResponse
-    : (snapshotsResponse?.data && Array.isArray(snapshotsResponse.data))
+    : snapshotsResponse?.data && Array.isArray(snapshotsResponse.data)
     ? snapshotsResponse.data
     : [];
-  
-  // Debug logging
+
   useEffect(() => {
     if (selectedDatabaseId) {
-      console.log('Compare page - selectedDatabaseId:', selectedDatabaseId);
-      console.log('Compare page - snapshotsResponse:', snapshotsResponse);
       console.log('Compare page - snapshots:', snapshots);
-      console.log('Compare page - snapshots.length:', snapshots.length);
     }
   }, [selectedDatabaseId, snapshotsResponse, snapshots]);
 
@@ -60,17 +64,12 @@ export default function ComparePage() {
   };
 
   const handleDeleteSnapshot = async (snapshotId: string) => {
-    if (!confirm(`Are you sure you want to delete this snapshot? This action cannot be undone.`)) {
-      return;
-    }
-
+    if (!confirm('Are you sure you want to delete this snapshot? This action cannot be undone.')) return;
     setDeletingSnapshotId(snapshotId);
     try {
       await schemaApi.deleteSnapshot(snapshotId);
-      // Clear selected snapshots if they were deleted
       if (snapshot1Id === snapshotId) setSnapshot1Id('');
       if (snapshot2Id === snapshotId) setSnapshot2Id('');
-      // Refresh snapshots list
       queryClient.invalidateQueries({ queryKey: ['snapshots', selectedDatabaseId] });
       alert('Snapshot deleted successfully');
     } catch (error: any) {
@@ -83,12 +82,8 @@ export default function ComparePage() {
   const handleDeleteAll = async () => {
     const confirmMessage = selectedDatabaseId
       ? `Are you sure you want to delete ALL snapshots for "${selectedDatabaseId}"? This action cannot be undone.`
-      : `Are you sure you want to delete ALL snapshots? This action cannot be undone.`;
-    
-    if (!confirm(confirmMessage)) {
-      return;
-    }
-
+      : 'Are you sure you want to delete ALL snapshots? This action cannot be undone.';
+    if (!confirm(confirmMessage)) return;
     setDeletingAll(true);
     try {
       const result = await schemaApi.deleteAllSnapshots(selectedDatabaseId || undefined);
@@ -104,10 +99,18 @@ export default function ComparePage() {
     }
   };
 
+  const handleCopySql = (sql: string | string[], key: string) => {
+    const text = Array.isArray(sql) ? sql.join('\n') : sql;
+    navigator.clipboard.writeText(text);
+    setCopiedSql(key);
+    setTimeout(() => setCopiedSql(null), 2000);
+  };
+
   return (
     <AppLayout breadcrumbs={[{ label: 'Schema Comparison' }]}>
       <div className="flex-1 p-xl overflow-y-auto">
         <div className="max-w-7xl mx-auto space-y-xl">
+          {/* Header */}
           <section>
             <div className="flex items-center justify-between mb-md">
               <div className="flex items-center gap-3">
@@ -117,11 +120,11 @@ export default function ComparePage() {
                 <div>
                   <h1 className="text-h1 text-text-primary">Schema Comparison</h1>
                   <p className="text-body-lg text-text-secondary mt-1">
-                    Compare schemas between snapshots to identify differences
+                    Compare schemas between snapshots and get rollback commands
                   </p>
                 </div>
               </div>
-              {selectedDatabaseId && snapshots && Array.isArray(snapshots) && snapshots.length > 0 && (
+              {selectedDatabaseId && snapshots.length > 0 && (
                 <Button
                   variant="outline"
                   size="sm"
@@ -134,18 +137,13 @@ export default function ComparePage() {
             </div>
           </section>
 
-          {showManageSnapshots && selectedDatabaseId && snapshots && Array.isArray(snapshots) && snapshots.length > 0 && (
+          {/* Manage Snapshots Panel */}
+          {showManageSnapshots && selectedDatabaseId && snapshots.length > 0 && (
             <Card>
               <CardContent>
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-h3 text-text-primary">Manage Snapshots</h3>
-                  <Button
-                    variant="danger"
-                    size="sm"
-                    onClick={handleDeleteAll}
-                    isLoading={deletingAll}
-                    icon={faTrash}
-                  >
+                  <Button variant="danger" size="sm" onClick={handleDeleteAll} isLoading={deletingAll} icon={faTrash}>
                     Delete All Snapshots
                   </Button>
                 </div>
@@ -153,25 +151,14 @@ export default function ComparePage() {
                   {snapshots.map((snapshot: any) => {
                     const id = snapshot.id || snapshot.snapshotId;
                     return (
-                      <div
-                        key={id}
-                        className="flex items-center justify-between p-3 bg-surface-light rounded-md border border-border"
-                      >
+                      <div key={id} className="flex items-center justify-between p-3 bg-surface-light rounded-md border border-border">
                         <div className="flex-1">
                           <div className="flex items-center gap-3">
-                            <span className="text-body font-medium text-text-primary">
-                              Version {snapshot.version}
-                            </span>
-                            <span className="text-body-sm text-text-muted">
-                              {new Date(snapshot.createdAt).toLocaleString()}
-                            </span>
-                            <span className="text-body-sm text-text-secondary">
-                              {snapshot.tablesCount || 0} tables
-                            </span>
+                            <span className="text-body font-medium text-text-primary">Version {snapshot.version}</span>
+                            <span className="text-body-sm text-text-muted">{new Date(snapshot.createdAt).toLocaleString()}</span>
+                            <span className="text-body-sm text-text-secondary">{snapshot.tablesCount || 0} tables</span>
                           </div>
-                          <p className="text-body-sm text-text-muted mt-1 font-mono">
-                            {id}
-                          </p>
+                          <p className="text-body-sm text-text-muted mt-1 font-mono">{id}</p>
                         </div>
                         <Button
                           variant="danger"
@@ -190,18 +177,17 @@ export default function ComparePage() {
             </Card>
           )}
 
+          {/* Snapshot selector */}
           <Card>
             <CardContent>
               <div className="space-y-6">
-                {selectedDatabaseId && snapshots && Array.isArray(snapshots) && snapshots.length >= 2 ? (
+                {selectedDatabaseId && snapshots.length >= 2 ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-body-sm font-medium text-text-primary mb-2">
-                        Snapshot 1
-                      </label>
+                      <label className="block text-body-sm font-medium text-text-primary mb-2">Snapshot 1 (baseline)</label>
                       <select
                         value={snapshot1Id}
-                        onChange={(e) => setSnapshot1Id(e.target.value)}
+                        onChange={(e) => { setSnapshot1Id(e.target.value); setShouldCompare(false); }}
                         className="w-full h-10 px-3 bg-surface-light border border-border rounded-md text-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary"
                       >
                         <option value="">Select snapshot...</option>
@@ -209,19 +195,17 @@ export default function ComparePage() {
                           const id = snapshot.id || snapshot.snapshotId;
                           return (
                             <option key={id} value={id}>
-                              Version {snapshot.version} - {new Date(snapshot.createdAt).toLocaleDateString()}
+                              Version {snapshot.version} — {new Date(snapshot.createdAt).toLocaleDateString()}
                             </option>
                           );
                         })}
                       </select>
                     </div>
                     <div>
-                      <label className="block text-body-sm font-medium text-text-primary mb-2">
-                        Snapshot 2
-                      </label>
+                      <label className="block text-body-sm font-medium text-text-primary mb-2">Snapshot 2 (target)</label>
                       <select
                         value={snapshot2Id}
-                        onChange={(e) => setSnapshot2Id(e.target.value)}
+                        onChange={(e) => { setSnapshot2Id(e.target.value); setShouldCompare(false); }}
                         className="w-full h-10 px-3 bg-surface-light border border-border rounded-md text-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary"
                       >
                         <option value="">Select snapshot...</option>
@@ -229,7 +213,7 @@ export default function ComparePage() {
                           const id = snapshot.id || snapshot.snapshotId;
                           return (
                             <option key={id} value={id}>
-                              Version {snapshot.version} - {new Date(snapshot.createdAt).toLocaleDateString()}
+                              Version {snapshot.version} — {new Date(snapshot.createdAt).toLocaleDateString()}
                             </option>
                           );
                         })}
@@ -239,17 +223,17 @@ export default function ComparePage() {
                 ) : (
                   <div className="text-center py-4">
                     <p className="text-body-sm text-text-muted">
-                      {!selectedDatabaseId 
+                      {!selectedDatabaseId
                         ? 'Select a database first'
                         : snapshotsLoading
                         ? 'Loading snapshots...'
-                        : snapshots && Array.isArray(snapshots) && snapshots.length > 0 && snapshots.length < 2
+                        : snapshots.length > 0 && snapshots.length < 2
                         ? `You need at least 2 snapshots. Currently have ${snapshots.length}.`
                         : 'No snapshots found'}
                     </p>
                   </div>
                 )}
-                {selectedDatabaseId && snapshots && Array.isArray(snapshots) && snapshots.length >= 2 && (
+                {selectedDatabaseId && snapshots.length >= 2 && (
                   <Button
                     variant="primary"
                     onClick={handleCompare}
@@ -264,8 +248,10 @@ export default function ComparePage() {
             </CardContent>
           </Card>
 
+          {/* Results */}
           {comparison && (
             <div className="space-y-4">
+              {/* Added tables */}
               {comparison.addedTables && comparison.addedTables.length > 0 && (
                 <Card>
                   <CardContent>
@@ -273,10 +259,24 @@ export default function ComparePage() {
                       <FontAwesomeIcon icon={faCheck} className="text-success" />
                       Added Tables ({comparison.addedTables.length})
                     </h3>
-                    <div className="space-y-2">
-                      {comparison.addedTables.map((table: string) => (
-                        <div key={table} className="p-2 bg-success/10 rounded-md text-body text-text-primary">
-                          {table}
+                    <div className="space-y-3">
+                      {comparison.addedTables.map((table: any, idx: number) => (
+                        <div key={idx} className="p-3 bg-success/10 rounded-md border border-success/20">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-body font-medium text-text-primary font-mono">
+                              {table.schemaName}.{table.name}
+                            </span>
+                            <span className="text-caption text-text-muted">{table.columnCount} columns</span>
+                          </div>
+                          {table.rollbackSql && (
+                            <RollbackBlock
+                              label="Rollback (drop added table)"
+                              sql={table.rollbackSql}
+                              id={`added-${idx}`}
+                              copiedId={copiedSql}
+                              onCopy={handleCopySql}
+                            />
+                          )}
                         </div>
                       ))}
                     </div>
@@ -284,6 +284,7 @@ export default function ComparePage() {
                 </Card>
               )}
 
+              {/* Removed tables */}
               {comparison.removedTables && comparison.removedTables.length > 0 && (
                 <Card>
                   <CardContent>
@@ -291,10 +292,24 @@ export default function ComparePage() {
                       <FontAwesomeIcon icon={faTimes} className="text-error" />
                       Removed Tables ({comparison.removedTables.length})
                     </h3>
-                    <div className="space-y-2">
-                      {comparison.removedTables.map((table: string) => (
-                        <div key={table} className="p-2 bg-error/10 rounded-md text-body text-text-primary">
-                          {table}
+                    <div className="space-y-3">
+                      {comparison.removedTables.map((table: any, idx: number) => (
+                        <div key={idx} className="p-3 bg-error/10 rounded-md border border-error/20">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-body font-medium text-text-primary font-mono">
+                              {table.schemaName}.{table.name}
+                            </span>
+                            <span className="text-caption text-text-muted">{table.columnCount} columns</span>
+                          </div>
+                          {table.rollbackSql && (
+                            <RollbackBlock
+                              label="Rollback (recreate removed table)"
+                              sql={table.rollbackSql}
+                              id={`removed-${idx}`}
+                              copiedId={copiedSql}
+                              onCopy={handleCopySql}
+                            />
+                          )}
                         </div>
                       ))}
                     </div>
@@ -302,24 +317,140 @@ export default function ComparePage() {
                 </Card>
               )}
 
-              {comparison.tableDiffs && comparison.tableDiffs.length > 0 && (
+              {/* Modified tables */}
+              {comparison.modifiedTables && comparison.modifiedTables.length > 0 && (
                 <Card>
                   <CardContent>
-                    <h3 className="text-h3 text-text-primary mb-4">Table Differences</h3>
+                    <h3 className="text-h3 text-text-primary mb-4 flex items-center gap-2">
+                      <FontAwesomeIcon icon={faPenToSquare} className="text-warning" />
+                      Modified Tables ({comparison.modifiedTables.length})
+                    </h3>
                     <div className="space-y-4">
-                      {comparison.tableDiffs.map((diff: any, idx: number) => (
-                        <div key={idx} className="p-4 bg-surface-light rounded-md">
-                          <h4 className="text-body font-medium text-text-primary mb-2">{diff.tableName}</h4>
-                          {diff.addedColumns && diff.addedColumns.length > 0 && (
+                      {comparison.modifiedTables.map((diff: any, idx: number) => (
+                        <div key={idx} className="p-4 bg-surface-light rounded-md border border-border">
+                          <h4 className="text-body font-medium text-text-primary mb-3 font-mono">{diff.tableName}</h4>
+
+                          {/* Added columns */}
+                          {diff.changes?.columns?.added?.length > 0 && (
                             <div className="mb-2">
-                              <span className="text-body-sm text-success">Added columns: </span>
-                              <span className="text-body-sm text-text-secondary">{diff.addedColumns.join(', ')}</span>
+                              <span className="text-body-sm font-medium text-success">+ Added columns: </span>
+                              <span className="text-body-sm text-text-secondary font-mono">
+                                {diff.changes.columns.added.map((c: any) => `${c.name} (${c.type})`).join(', ')}
+                              </span>
                             </div>
                           )}
-                          {diff.removedColumns && diff.removedColumns.length > 0 && (
+
+                          {/* Removed columns */}
+                          {diff.changes?.columns?.removed?.length > 0 && (
                             <div className="mb-2">
-                              <span className="text-body-sm text-error">Removed columns: </span>
-                              <span className="text-body-sm text-text-secondary">{diff.removedColumns.join(', ')}</span>
+                              <span className="text-body-sm font-medium text-error">− Removed columns: </span>
+                              <span className="text-body-sm text-text-secondary font-mono">
+                                {diff.changes.columns.removed.map((c: any) => `${c.name} (${c.type})`).join(', ')}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Modified columns */}
+                          {diff.changes?.columns?.modified?.length > 0 && (
+                            <div className="mb-2">
+                              <span className="text-body-sm font-medium text-warning">~ Modified columns: </span>
+                              <div className="mt-1 space-y-1">
+                                {diff.changes.columns.modified.map((c: any, colIdx: number) => {
+                                  // Use changeType from backend if available, otherwise detect it
+                                  const isSizeChange = c.changeType === 'size' || 
+                                    (c.changeType === undefined && (() => {
+                                      const fromBase = c.from.type.replace(/\([^)]*\)/g, '').toLowerCase();
+                                      const toBase = c.to.type.replace(/\([^)]*\)/g, '').toLowerCase();
+                                      return fromBase === toBase && c.from.type !== c.to.type;
+                                    })());
+                                  const isNullableChange = c.changeType === 'nullable' || 
+                                    (c.changeType === undefined && c.from.nullable !== c.to.nullable && !isSizeChange);
+                                  const isTypeChange = c.changeType === 'type' || 
+                                    (c.changeType === undefined && !isSizeChange && !isNullableChange);
+                                  
+                                  return (
+                                    <div key={colIdx} className="text-body-sm text-text-secondary font-mono pl-4">
+                                      <span className="font-medium text-text-primary">{c.name}:</span>{' '}
+                                      <span className={isSizeChange ? 'text-warning' : ''}>
+                                        {c.from.type}
+                                        {c.from.nullable !== c.to.nullable && (
+                                          <span className="text-text-muted"> ({c.from.nullable ? 'NULL' : 'NOT NULL'})</span>
+                                        )}
+                                      </span>
+                                      {' → '}
+                                      <span className={isSizeChange ? 'text-warning font-semibold' : ''}>
+                                        {c.to.type}
+                                        {c.from.nullable !== c.to.nullable && (
+                                          <span className="text-text-muted"> ({c.to.nullable ? 'NULL' : 'NOT NULL'})</span>
+                                        )}
+                                      </span>
+                                      {isSizeChange && (
+                                        <span className="ml-2 text-caption text-warning bg-warning/10 px-1.5 py-0.5 rounded">
+                                          Size change
+                                        </span>
+                                      )}
+                                      {isNullableChange && !isSizeChange && (
+                                        <span className="ml-2 text-caption text-info bg-info/10 px-1.5 py-0.5 rounded">
+                                          Nullable change
+                                        </span>
+                                      )}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Added indexes */}
+                          {diff.changes?.indexes?.added?.length > 0 && (
+                            <div className="mb-2">
+                              <span className="text-body-sm font-medium text-success">+ Added indexes: </span>
+                              <span className="text-body-sm text-text-secondary font-mono">
+                                {diff.changes.indexes.added.map((i: any) => i.name).join(', ')}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Removed indexes */}
+                          {diff.changes?.indexes?.removed?.length > 0 && (
+                            <div className="mb-2">
+                              <span className="text-body-sm font-medium text-error">− Removed indexes: </span>
+                              <span className="text-body-sm text-text-secondary font-mono">
+                                {diff.changes.indexes.removed.map((i: any) => i.name).join(', ')}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Added FK */}
+                          {diff.changes?.foreignKeys?.added?.length > 0 && (
+                            <div className="mb-2">
+                              <span className="text-body-sm font-medium text-success">+ Added foreign keys: </span>
+                              <span className="text-body-sm text-text-secondary font-mono">
+                                {diff.changes.foreignKeys.added.map((fk: any) => fk.name).join(', ')}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Removed FK */}
+                          {diff.changes?.foreignKeys?.removed?.length > 0 && (
+                            <div className="mb-2">
+                              <span className="text-body-sm font-medium text-error">− Removed foreign keys: </span>
+                              <span className="text-body-sm text-text-secondary font-mono">
+                                {diff.changes.foreignKeys.removed.map((fk: any) => fk.name).join(', ')}
+                              </span>
+                            </div>
+                          )}
+
+                          {/* Rollback SQL */}
+                          {diff.rollbackSql && diff.rollbackSql.length > 0 && (
+                            <div className="mt-3">
+                              <RollbackBlock
+                                label="Rollback commands"
+                                sql={diff.rollbackSql}
+                                id={`modified-${idx}`}
+                                copiedId={copiedSql}
+                                onCopy={handleCopySql}
+                              />
                             </div>
                           )}
                         </div>
@@ -329,9 +460,10 @@ export default function ComparePage() {
                 </Card>
               )}
 
+              {/* No differences */}
               {(!comparison.addedTables || comparison.addedTables.length === 0) &&
                 (!comparison.removedTables || comparison.removedTables.length === 0) &&
-                (!comparison.tableDiffs || comparison.tableDiffs.length === 0) && (
+                (!comparison.modifiedTables || comparison.modifiedTables.length === 0) && (
                   <Card>
                     <CardContent>
                       <p className="text-body text-text-secondary text-center py-8">
@@ -343,17 +475,18 @@ export default function ComparePage() {
             </div>
           )}
 
+          {/* No database selected */}
           {!selectedDatabaseId && (
             <Card>
               <CardContent>
                 <div className="text-center py-8">
                   <p className="text-body text-text-secondary mb-4">
-                    {databases.length > 0 
+                    {databases.length > 0
                       ? 'Please select a database from the sidebar to compare snapshots.'
                       : 'No databases found. Please ingest a schema first.'}
                   </p>
                   {databases.length === 0 && (
-                    <Button variant="primary" onClick={() => window.location.href = '/databases'}>
+                    <Button variant="primary" onClick={() => (window.location.href = '/databases')}>
                       Go to Databases
                     </Button>
                   )}
@@ -362,7 +495,8 @@ export default function ComparePage() {
             </Card>
           )}
 
-          {selectedDatabaseId && snapshots && Array.isArray(snapshots) && snapshots.length < 2 && !snapshotsLoading && (
+          {/* Not enough snapshots */}
+          {selectedDatabaseId && snapshots.length < 2 && !snapshotsLoading && (
             <Card>
               <CardContent>
                 <div className="text-center py-8">
@@ -372,7 +506,7 @@ export default function ComparePage() {
                   <p className="text-body-sm text-text-muted mb-4">
                     Ingest the same database schema again to create version 2, then you can compare versions.
                   </p>
-                  <Button variant="primary" onClick={() => window.location.href = '/databases'}>
+                  <Button variant="primary" onClick={() => (window.location.href = '/databases')}>
                     Ingest Schema Again
                   </Button>
                 </div>
@@ -382,5 +516,39 @@ export default function ComparePage() {
         </div>
       </div>
     </AppLayout>
+  );
+}
+
+/* ── Rollback SQL block sub-component ────────────────────────────────────── */
+interface RollbackBlockProps {
+  label: string;
+  sql: string | string[];
+  id: string;
+  copiedId: string | null;
+  onCopy: (sql: string | string[], id: string) => void;
+}
+
+function RollbackBlock({ label, sql, id, copiedId, onCopy }: RollbackBlockProps) {
+  const displaySql = Array.isArray(sql) ? sql.join('\n') : sql;
+
+  return (
+    <div className="mt-2 bg-background rounded-md border border-border/60 overflow-hidden">
+      <div className="flex items-center justify-between px-3 py-1.5 bg-surface-light border-b border-border/40">
+        <span className="text-caption text-warning flex items-center gap-1.5">
+          <FontAwesomeIcon icon={faRotateLeft} className="text-xs" />
+          {label}
+        </span>
+        <button
+          onClick={() => onCopy(sql, id)}
+          className="text-caption text-text-muted hover:text-text-primary transition-colors flex items-center gap-1"
+        >
+          <FontAwesomeIcon icon={faCopy} className="text-xs" />
+          {copiedId === id ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <pre className="p-3 font-mono text-code text-text-primary whitespace-pre-wrap overflow-x-auto text-xs">
+        {displaySql}
+      </pre>
+    </div>
   );
 }

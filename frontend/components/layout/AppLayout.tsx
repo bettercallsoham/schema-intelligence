@@ -66,7 +66,6 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
         <Header
           breadcrumbs={breadcrumbs}
           onNewScan={handleNewScan}
-          onSearch={handleSearch}
         />
         <main className="flex-1 overflow-y-auto">{children}</main>
       </div>

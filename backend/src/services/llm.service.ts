@@ -228,7 +228,7 @@ CRITICAL: Start with a direct answer. Avoid verbose responses like "Good news!" 
     });
 
     const response = await Promise.race([
-      model.invoke(messages),
+      model.invoke(messages as any),
       timeoutPromise,
     ]);
     const responseText = response.content as string;
@@ -429,7 +429,7 @@ Requirements:
     
     // Also include task outputs for more context
     if (crewOutput.taskOutputs && crewOutput.taskOutputs.length > 0) {
-      crewOutput.taskOutputs.forEach((taskOutput) => {
+      crewOutput.taskOutputs.forEach((taskOutput: any) => {
         if (taskOutput && taskOutput.result) {
           fullOutput += '\n\n' + taskOutput.result;
         }
@@ -574,7 +574,7 @@ Format your response with EXPLANATION, SQL SUGGESTIONS, and RECOMMENDATIONS sect
       new HumanMessage(userPrompt),
     ];
 
-    const response = await model.invoke(messages);
+    const response = await model.invoke(messages as any);
     return parseLLMResponse(response.content as string);
   } catch (error) {
     logger.error('Failed to explain specific issue with LangChain', { 

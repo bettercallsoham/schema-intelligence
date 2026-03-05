@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { Card, CardContent } from '@/components/ui/Card';
@@ -17,7 +17,7 @@ import { useApp } from '@/contexts/AppContext';
 import { recommendationApi, impactApi, schemaApi } from '@/lib/api';
 import { useQuery } from '@tanstack/react-query';
 
-export default function SQLGeneratorPage() {
+function SQLGeneratorPageInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const issueIdParam = searchParams.get('issueId');
@@ -281,5 +281,13 @@ export default function SQLGeneratorPage() {
         </div>
       </div>
     </AppLayout>
+  );
+}
+
+export default function SQLGeneratorPage() {
+  return (
+    <Suspense>
+      <SQLGeneratorPageInner />
+    </Suspense>
   );
 }

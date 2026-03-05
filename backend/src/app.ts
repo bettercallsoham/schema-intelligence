@@ -9,6 +9,7 @@ import recommendationRoutes from './routes/recommendation.route';
 import assistantRoutes from './routes/assistant.route';
 import analyticsRoutes from './routes/analytics.route';
 import conversationRoutes from './routes/conversation.route';
+import schemaAdvisorRoutes from './routes/schema-advisor.route';
 import { errorHandler } from './middleware/errorHandler';
 
 const app: Express = express();
@@ -29,6 +30,7 @@ app.use('/api/v1/recommendations', recommendationRoutes);
 app.use('/api/v1/assistant', assistantRoutes);
 app.use('/api/v1/analytics', analyticsRoutes);
 app.use('/api/v1/conversations', conversationRoutes);
+app.use('/api/v1/schema-advisor', schemaAdvisorRoutes);
 
 // Root route - API information
 app.get('/', (_req: Request, res: Response) => {

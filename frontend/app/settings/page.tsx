@@ -21,6 +21,7 @@ export default function SettingsPage() {
   const { databases } = useApp();
   const [activeTab, setActiveTab] = useState<'profile' | 'database' | 'notifications' | 'security'>('profile');
   const [isSaving, setIsSaving] = useState(false);
+  const [saveSuccess, setSaveSuccess] = useState(false);
 
   const tabs = [
     { id: 'profile', label: 'Profile', icon: faUser },
@@ -31,11 +32,11 @@ export default function SettingsPage() {
 
   const handleSave = async () => {
     setIsSaving(true);
-    // Simulate save
-    setTimeout(() => {
-      setIsSaving(false);
-      alert('Settings saved successfully!');
-    }, 1000);
+    setSaveSuccess(false);
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    setIsSaving(false);
+    setSaveSuccess(true);
+    setTimeout(() => setSaveSuccess(false), 3000);
   };
 
   return (
@@ -55,6 +56,12 @@ export default function SettingsPage() {
               </div>
             </div>
           </section>
+
+          {saveSuccess && (
+            <div className="flex items-center gap-3 px-4 py-3 bg-success/10 border border-success/30 rounded-lg text-success text-body-sm font-medium">
+              ✓ Changes saved successfully.
+            </div>
+          )}
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-xl">
             {/* Sidebar */}

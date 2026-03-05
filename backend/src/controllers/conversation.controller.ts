@@ -7,7 +7,6 @@ import {
   archiveConversation,
   deleteConversation,
   deleteConversations,
-  addMessageToConversation,
 } from '../services/conversation.service';
 import { AppError } from '../middleware/errorHandler';
 import { AuthRequest } from '../middleware/auth.middleware';

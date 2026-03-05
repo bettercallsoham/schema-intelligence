@@ -45,8 +45,8 @@ export default function RegisterPage() {
       await register(email, name, password, 'DEVELOPER');
       setSuccess(true);
       setTimeout(() => {
-        router.push('/login');
-      }, 2000);
+        router.push('/dashboard');
+      }, 1000);
     } catch (err: any) {
       setError(err.response?.data?.message || 'Registration failed. Please try again.');
     } finally {
@@ -85,7 +85,7 @@ export default function RegisterPage() {
               <FontAwesomeIcon icon={faLayerGroup} className="text-success text-2xl" />
             </div>
             <h2 className="text-h2 text-text-primary mb-2">Account Created!</h2>
-            <p className="text-body text-text-secondary mb-4">Redirecting to login...</p>
+            <p className="text-body text-text-secondary mb-4">Redirecting to dashboard...</p>
           </div>
         ) : (
           <>
@@ -212,7 +212,7 @@ export default function RegisterPage() {
 
       {/* Footer */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-        <p className="text-body-sm text-text-muted">© 2024 Schema Intel. All rights reserved.</p>
+        <p className="text-body-sm text-text-muted">© 2026 Schema Intel. All rights reserved.</p>
       </div>
     </div>
   );

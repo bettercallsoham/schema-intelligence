@@ -21,7 +21,7 @@ const steps = [
   { id: 3, title: 'Scan', description: 'Run your first scan' },
   { id: 4, title: 'Explore', description: 'Explore your schema' },
   { id: 5, title: 'AI', description: 'Try AI Assistant' },
-  { id: 6, title: 'Complete', description: 'You're all set!' },
+  { id: 6, title: 'Complete', description: "You're all set!" },
 ];
 
 export default function OnboardingPage() {

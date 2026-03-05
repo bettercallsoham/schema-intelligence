@@ -60,6 +60,9 @@ jobs:
 
       - name: Ingest head schema
         id: ingest-head
+        env:
+          BACKEND_URL: ${{ env.BACKEND_URL }}
+          API_TOKEN: ${{ env.API_TOKEN }}
         run: |
           RESP=$(curl -s -w "\n%{http_code}" -X POST "$BACKEND_URL/api/v1/schema/ingest" \
             -H "Authorization: Bearer $API_TOKEN" \
@@ -73,9 +76,6 @@ jobs:
           fi
           SNAPSHOT_ID_HEAD=$(echo "$BODY" | jq -r '.data.snapshotId')
           echo "snapshot_id=$SNAPSHOT_ID_HEAD" >> $GITHUB_OUTPUT
-        env:
-          BACKEND_URL: ${{ env.BACKEND_URL }}
-          API_TOKEN: ${{ env.API_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5

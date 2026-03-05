@@ -34,11 +34,11 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'
 
 export default function AnalyticsPage() {
   const [connectionConfig, setConnectionConfig] = useState<DatabaseConnection>({
-    host: 'localhost',
-    port: 5433,
-    database: 'analytics_demo',
-    user: 'postgres',
-    password: 'postgres',
+    host: '',
+    port: 5432,
+    database: '',
+    user: '',
+    password: '',
   });
   const [selectedTable, setSelectedTable] = useState<string>('');
   const [dateRange, setDateRange] = useState({ startDate: '', endDate: '' });
