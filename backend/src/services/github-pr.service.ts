@@ -385,10 +385,39 @@ function determineChangeType(additions: string[]): PRSchemaChange['changeType'] 
 }
 
 /**
- * Extract column name from foreign key statement
+ * Check if a foreign key column has a corresponding index definition line.
+ *
+ * This is intentionally a lightweight heuristic:
+ * - Extract the FK column from a line like: CONSTRAINT ... FOREIGN KEY ("user_id") REFERENCES ...
+ * - Extract indexed columns from a line like: CREATE INDEX ... ON ...("user_id", "other_col")
+ * - Return true if the FK column appears in the index column list.
  */
-function extractColumnName(_fkLine: string, _indexLine: string): boolean {
-  return false;
+function extractColumnName(fkLine: string, indexLine: string): boolean {
+  const fk = fkLine.toLowerCase();
+  const idx = indexLine.toLowerCase();
+
+  // Get foreign key column name inside FOREIGN KEY(...)
+  const fkMatch = fk.match(/foreign key\s*\(([^)]+)\)/);
+  if (!fkMatch) return false;
+
+  const fkCols = fkMatch[1]
+    .split(',')
+    .map((c) => c.replace(/"/g, '').trim())
+    .filter(Boolean);
+
+  if (fkCols.length === 0) return false;
+  const fkCol = fkCols[0];
+
+  // Extract all column names from the index definition: (...col1, col2,...)
+  const idxMatch = idx.match(/\(([^)]+)\)/);
+  if (!idxMatch) return false;
+
+  const idxCols = idxMatch[1]
+    .split(',')
+    .map((c) => c.replace(/"/g, '').trim())
+    .filter(Boolean);
+
+  return idxCols.includes(fkCol);
 }
 
 /**

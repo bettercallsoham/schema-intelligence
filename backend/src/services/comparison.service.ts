@@ -220,11 +220,35 @@ const buildRollbackSql = (schemaName: string, tableName: string, changes: any): 
     sqls.push(`ALTER TABLE ${q} ADD COLUMN IF NOT EXISTS "${col.name}" ${col.type}${nullStr};`);
   }
 
-  // Rollback modified columns → revert to old type/nullability
+  // Rollback modified columns → revert to old type/nullability.
+  // Use the recorded changeType to avoid unnecessary operations:
+  // - 'nullable'  → only toggle NOT NULL
+  // - 'size'/'type' → revert TYPE, and only change NOT NULL if it actually changed
   for (const col of changes.columns.modified || []) {
-    const nullStr = col.from.nullable ? 'DROP NOT NULL' : 'SET NOT NULL';
-    sqls.push(`ALTER TABLE ${q} ALTER COLUMN "${col.name}" TYPE ${col.from.type} USING "${col.name}"::${col.from.type};`);
-    sqls.push(`ALTER TABLE ${q} ALTER COLUMN "${col.name}" ${nullStr};`);
+    const fromNullable = !!col.from.nullable;
+    const toNullable = !!col.to?.nullable;
+    const changeType = col.changeType as 'size' | 'nullable' | 'type' | undefined;
+
+    // Helper to build the NOT NULL toggle based on the "from" state
+    const buildNullSql = () => {
+      const nullStr = fromNullable ? 'DROP NOT NULL' : 'SET NOT NULL';
+      sqls.push(`ALTER TABLE ${q} ALTER COLUMN "${col.name}" ${nullStr};`);
+    };
+
+    if (changeType === 'nullable') {
+      // Only nullability changed → don't touch the type
+      buildNullSql();
+    } else {
+      // Type or size changed → revert TYPE
+      sqls.push(
+        `ALTER TABLE ${q} ALTER COLUMN "${col.name}" TYPE ${col.from.type} USING "${col.name}"::${col.from.type};`,
+      );
+
+      // Only adjust NOT NULL when the nullable flag actually changed
+      if (fromNullable !== toNullable) {
+        buildNullSql();
+      }
+    }
   }
 
   // Rollback added indexes → DROP them
