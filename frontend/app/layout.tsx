@@ -21,14 +21,6 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Schema Intelligence - AI-Powered Database Schema Analysis',
   description: 'Transform your database performance with AI-powered schema analysis, automated optimization recommendations, and intelligent issue detection.',
-  icons: {
-    icon: [
-      { url: '', sizes: '48x48' },
-      { url: '', sizes: '512x512', type: 'image/png' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: '/icon.png',
-  },
 };
 
 export default function RootLayout({
